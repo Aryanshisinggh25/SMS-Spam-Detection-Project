@@ -1,6 +1,11 @@
-# SMS Spam Detection
+# 🛡️ Sentinel-SMS: AI Spam & Phishing Detection
 
-> An end-to-end NLP project that detects spam SMS messages using classical machine learning, with a Streamlit web application for interactive predictions.
+[![Python](https://img.shields.io/badge/Python-3.14-blue.svg)](https://www.python.org/)
+[![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange.svg)](https://scikit-learn.org/)
+[![Framework](https://img.shields.io/badge/GUI-Streamlit-red.svg)](https://streamlit.io/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+> An end-to-end NLP and machine learning platform that detects spam, smishing, and phishing SMS messages using ensemble classification, featuring a modern Streamlit web application.
 
 ---
 
