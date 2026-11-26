@@ -71,39 +71,135 @@ s1 = prs.slides.add_slide(blank_layout)
 apply_background(s1)
 
 # Subtle decorative accent bar
-accent = s1.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.8), Inches(1.6), Inches(1.8), Inches(0.08))
+accent = s1.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.8), Inches(0.7), Inches(1.8), Inches(0.06))
 accent.fill.solid()
 accent.fill.fore_color.rgb = C_CYAN
 accent.line.fill.background()
 
-tb_title = s1.shapes.add_textbox(Inches(0.8), Inches(1.8), Inches(11.7), Inches(4.8))
+# Title and Subtitle Block
+tb_title = s1.shapes.add_textbox(Inches(0.8), Inches(0.85), Inches(11.7), Inches(2.1))
 tf = tb_title.text_frame
 tf.word_wrap = True
 
 p = tf.paragraphs[0]
 p.text = "SENTINEL // SMS"
-p.font.size = Pt(46)
+p.font.size = Pt(38)
 p.font.bold = True
 p.font.color.rgb = C_TEXT_WHITE
 
 p = tf.add_paragraph()
 p.text = "Intelligent SMS Spam & Phishing Detection System"
-p.font.size = Pt(24)
+p.font.size = Pt(20)
 p.font.bold = True
 p.font.color.rgb = C_CYAN
-p.space_after = Pt(14)
+p.space_after = Pt(6)
 
 p = tf.add_paragraph()
-p.text = "A comprehensive NLP and machine learning platform engineered to detect mobile smishing, lottery lures,\nbanking fraud, and unsolicited commercial text messages with hybrid TF-IDF, heuristic sensors, and an interactive web GUI."
-p.font.size = Pt(14)
+p.text = "Natural Language Processing & Machine Learning Capstone Project • AI Cyber Threat Intelligence Platform"
+p.font.size = Pt(12)
 p.font.color.rgb = C_TEXT_MUTED
-p.space_after = Pt(24)
 
-p = tf.add_paragraph()
-p.text = "Author / Repository: Aryanshisinggh25  |  https://github.com/Aryanshisinggh25/SMS-Spam-Detection-Project\nCore Stack: Python 3.14  •  Scikit-Learn  •  NLTK  •  Streamlit  •  Pandas  •  Joblib"
-p.font.size = Pt(13)
-p.font.bold = True
-p.font.color.rgb = C_TEXT_WHITE
+# Left Card: Submitted To (Supervisor / Guide)
+c_left = create_card(s1, Inches(0.8), Inches(3.1), Inches(5.5), Inches(3.8))
+tb_left = s1.shapes.add_textbox(Inches(1.1), Inches(3.3), Inches(4.9), Inches(3.4))
+tf_left = tb_left.text_frame
+tf_left.word_wrap = True
+
+p_left_cat = tf_left.paragraphs[0]
+p_left_cat.text = "PROJECT SUPERVISION"
+p_left_cat.font.size = Pt(11)
+p_left_cat.font.bold = True
+p_left_cat.font.color.rgb = C_CYAN
+p_left_cat.space_after = Pt(12)
+
+p_sub = tf_left.add_paragraph()
+p_sub.text = "Submitted to :- Kavish Mudgal"
+p_sub.font.size = Pt(22)
+p_sub.font.bold = True
+p_sub.font.color.rgb = C_TEXT_WHITE
+p_sub.space_after = Pt(18)
+
+p_meta1 = tf_left.add_paragraph()
+p_meta1.text = "• Domain: Natural Language Processing & Cybersecurity"
+p_meta1.font.size = Pt(11)
+p_meta1.font.color.rgb = C_TEXT_MUTED
+p_meta1.space_after = Pt(4)
+
+p_meta2 = tf_left.add_paragraph()
+p_meta2.text = "• Solution: Hybrid TF-IDF + Heuristic Metadata Threat Pipeline"
+p_meta2.font.size = Pt(11)
+p_meta2.font.color.rgb = C_TEXT_MUTED
+p_meta2.space_after = Pt(4)
+
+p_meta3 = tf_left.add_paragraph()
+p_meta3.text = "• Tech Stack: Python 3.14 • Scikit-Learn • NLTK • Streamlit"
+p_meta3.font.size = Pt(11)
+p_meta3.font.color.rgb = C_TEXT_MUTED
+p_meta3.space_after = Pt(4)
+
+p_meta4 = tf_left.add_paragraph()
+p_meta4.text = "• Repository: github.com/Aryanshisinggh25/SMS-Spam-Detection-Project"
+p_meta4.font.size = Pt(10)
+p_meta4.font.color.rgb = C_CYAN
+
+# Right Card: Submitted By (Team Members & Roll Numbers)
+c_right = create_card(s1, Inches(6.6), Inches(3.1), Inches(5.9), Inches(3.8))
+
+tb_right_header = s1.shapes.add_textbox(Inches(6.9), Inches(3.3), Inches(5.3), Inches(0.4))
+tf_right_h = tb_right_header.text_frame
+tf_right_h.word_wrap = True
+p_right_cat = tf_right_h.paragraphs[0]
+p_right_cat.text = "SUBMITTED BY (PROJECT TEAM)"
+p_right_cat.font.size = Pt(11)
+p_right_cat.font.bold = True
+p_right_cat.font.color.rgb = C_CYAN
+
+# Column Header (Name | Roll No.)
+tb_names = s1.shapes.add_textbox(Inches(6.9), Inches(3.75), Inches(3.4), Inches(3.0))
+tf_names = tb_names.text_frame
+tf_names.word_wrap = True
+
+p_nh = tf_names.paragraphs[0]
+p_nh.text = "Name"
+p_nh.font.size = Pt(12)
+p_nh.font.bold = True
+p_nh.font.color.rgb = C_CYAN
+p_nh.space_after = Pt(6)
+
+tb_rolls = s1.shapes.add_textbox(Inches(10.3), Inches(3.75), Inches(2.0), Inches(3.0))
+tf_rolls = tb_rolls.text_frame
+tf_rolls.word_wrap = True
+
+p_rh = tf_rolls.paragraphs[0]
+p_rh.text = "Roll No."
+p_rh.font.size = Pt(12)
+p_rh.font.bold = True
+p_rh.font.color.rgb = C_CYAN
+p_rh.space_after = Pt(6)
+
+team_members = [
+    ("Aryanshi Singh", "2401201190"),
+    ("Preeti Chaurasia", "2401201191"),
+    ("Ashish Bhatt", "2401201187"),
+    ("Ashish", "2401201188"),
+    ("Ayush Verma", "2401201186"),
+    ("Abhishek Kumar Yadav", "2401201193"),
+]
+
+for name, roll in team_members:
+    pn = tf_names.add_paragraph()
+    pn.text = name
+    pn.font.size = Pt(11)
+    pn.font.bold = True
+    pn.font.color.rgb = C_TEXT_WHITE
+    pn.space_after = Pt(4)
+    
+    pr = tf_rolls.add_paragraph()
+    pr.text = roll
+    pr.font.size = Pt(11)
+    pr.font.bold = True
+    pr.font.color.rgb = C_TEXT_MUTED
+    pr.space_after = Pt(4)
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # SLIDE 2: PROBLEM STATEMENT & CHALLENGES
